@@ -14,7 +14,7 @@ def predict_user(user1_name, user2_name, tweet_text):
         tweet_text: str, tweet text to evaluate
 
     # Returns
-        prediction form logistic reression model
+        prediction form logistic regression model
     """
     user1 = User.query.filter(User.name == user1_name).one()
     user2 = User.query.filter(User.name == user2_name).one()
@@ -26,3 +26,7 @@ def predict_user(user1_name, user2_name, tweet_text):
     log_reg = LogisticRegression().fit(embeddings, labels)
     tweet_embedding = BASILICA.embed_sentence(tweet_text, model='twitter')
     return log_reg.predict(np.array(tweet_embedding).reshape(1,-1))
+
+    # knnc = KNeighborsClassifier(weights='distance', metric='cosine').fit(embeddings, labels)
+    # tweet_embedding = BASILICA.embed_sentence(tweet_text, model='twitter')
+    # return knnc.predict(np.array(tweet_embedding).reshape(1, -1))

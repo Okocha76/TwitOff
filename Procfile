@@ -1,1 +1,1 @@
-web: gunicorn twitoff:APP --timeout 300
+web: gunicorn -w 4 twitoff:APP --timeout 300
