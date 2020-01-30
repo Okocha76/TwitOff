@@ -1,9 +1,9 @@
 import basilica
 import tweepy
 from decouple import config
-from .models import DB, User, Tweet
+from .models import DB, User, Tweets
 
-TWITTER_USERS = ['elonmusk', 'nasa', 'sadserver', 'austen', 'lockheedmartin']
+TWITTER_USERS = ['MarinaHyde', 'peterpomeranzev', 'mixedknuts', 'JimMFelton', 'vboykis', 'chrisalbon', 'IanDunt']
 
 TWITTER_AUTH = tweepy.OAuthHandler(config('TWITTER_CONSUMER_API_KEY'),
                                    config('TWITTER_CONSUMER_API_SECRET'))
@@ -18,11 +18,11 @@ def add_user(name):
         # Get user info from tweepy API
         twitter_user = TWITTER.get_user(name)
 
-        # Add user info to User table in database
-        db_user = User(id=twitter_user.id,
-                       name=twitter_user.screen_name,
-                       followers=twitter_user.followers_count)
-                       newest_tweet_id=newest_tweet_id)
+        # Add db_user to User table (or check if existing)
+        db_user = (User.query.get(twitter_user.id) or
+                   User(id=twitter_user.id,
+                        name=name,
+                        followers=twitter_user.followers_count))
         DB.session.add(db_user)
 
         # Add as many recent non-retweet/reply tweets as possible
@@ -48,9 +48,10 @@ def add_user(name):
                                                 model='twitter')
 
             # Add tweet info to Tweets table in database
-            db_tweet = Tweet(id=tweet.id,
-                             text=tweet.full_text[:300],
-                             embedding=embedding)
+            db_tweet = Tweets(id=tweet.id,
+                              text=tweet.full_text[:300],
+                              embedding=embedding)
+            db_user.tweets.append(db_tweet)
             DB.session.add(db_tweet)
 
     except Exception as e:
