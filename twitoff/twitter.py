@@ -3,7 +3,8 @@ import tweepy
 from decouple import config
 from .models import DB, User, Tweets
 
-TWITTER_USERS = ['MarinaHyde', 'peterpomeranzev', 'mixedknuts', 'JimMFelton', 'vboykis', 'chrisalbon', 'IanDunt']
+TWITTER_USERS = ['MarinaHyde', 'peterpomeranzev', 'mixedknuts', 'JimMFelton', 'vboykis',
+                 'chrisalbon', 'IanDunt', 'MLiebreich', 'paulg', 'patio11']
 
 TWITTER_AUTH = tweepy.OAuthHandler(config('TWITTER_CONSUMER_API_KEY'),
                                    config('TWITTER_CONSUMER_API_SECRET'))

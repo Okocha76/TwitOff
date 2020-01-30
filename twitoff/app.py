@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from flask import Flask, render_template, request
 from .models import DB, User
 from .predict import predict_user
-from .twitter import add_user
+from .twitter import add_user, add_default_users, update_all_users
 
 load_dotenv()
 
