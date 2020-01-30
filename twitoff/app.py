@@ -16,8 +16,7 @@ def create_app():
 
     @app.route('/')
     def root():
-        users = User.query.all()
-        return render_template('base.html', title='TwitOff', users=users)
+        return render_template('base.html', title='TwitOff', users=User.query.all())
 
     @app.route('/user', methods=['POST'])
     @app.route('/user/<name>', methods=['GET'])
