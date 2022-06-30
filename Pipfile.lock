@@ -251,7 +251,7 @@
                 "sha256:fc7a7d7b0ed72589fd8b8486b9b42a564f10b8762be8bd4d9df94b807af4a089"
             ],
             "markers": "python_version < '3.11' and python_version >= '3.7'",
-            "version": "==1.21.5"
+            "version": ">=1.22.0"
         },
         "oauthlib": {
             "hashes": [
