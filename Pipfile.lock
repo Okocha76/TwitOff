@@ -442,15 +442,6 @@
             "index": "pypi",
             "version": "==2.9.6"
         },
-        "pysocks": {
-            "hashes": [
-                "sha256:08e69f092cc6dbe92a0fdd16eeb9b9ffbc13cadfe5ca4c7bd92ffb078b293299",
-                "sha256:2725bd0a9925919b9b51739eea5f9e2bae91e83288108a9ad338b2e3a4435ee5",
-                "sha256:3f8804571ebe159c380ac6de37643bb4685970655d3bba243530d6558b799aa0"
-            ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
-            "version": "==1.7.1"
-        },
         "python-decouple": {
             "hashes": [
                 "sha256:ba6e2657d4f376ecc46f77a3a615e058d93ba5e465c01bbe57289bfb7cce680f",
@@ -629,11 +620,11 @@
         },
         "tweepy": {
             "hashes": [
-                "sha256:8abd828ba51a85a2b5bb7373715d6d3bb32d18ac624e3a4db02e4ef8ab48316b",
-                "sha256:ecc7f200c86127903017e48824efd008734814e95f3e8e9b45ce0f4120dd08db"
+                "sha256:097425335f9f6674826ba7e72b2247bbca39c9ca0a0bd82f30a38a5bef8c6c88",
+                "sha256:95207c41023b75a066b0b442a0a907acada610a3cfa09c4ccb5f2d9e522c33b5"
             ],
             "index": "pypi",
-            "version": "==3.8.0"
+            "version": "==4.13.0"
         },
         "typing-extensions": {
             "hashes": [
